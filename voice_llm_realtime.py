@@ -16,7 +16,7 @@ import soundfile as sf
 import requests
 from vosk import Model, KaldiRecognizer
 import scipy.signal
-
+device = "cuda" if torch.cuda.is_avlable() else "cpu"
 # ============================= CONFIG =============================
 OLLAMA_MODEL = "qwen3-vl:4b"
 VOSK_MODEL_PATH = os.path.join(os.path.dirname(__file__), "vosk-model-small-en-us-0.15")
